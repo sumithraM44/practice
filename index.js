@@ -1,9 +1,14 @@
-// Get the button and heading elements
-const button = document.getElementById('changeBtn');
+const button = document.getElementById('greetBtn');
 const heading = document.getElementById('greeting');
+const nameInput = document.getElementById('nameInput');
 
-// Add a click event listener to the button
 button.addEventListener('click', () => {
-  heading.textContent = "Hello, JavaScript is working!";
-  heading.style.color = "blue";
+  const name = nameInput.value.trim();
+  if (name) {
+    heading.textContent = `Hello, ${name}! Nice to meet you.`;
+    heading.style.color = "green";
+  } else {
+    heading.textContent = "Please enter your name!";
+    heading.style.color = "red";
+  }
 });
